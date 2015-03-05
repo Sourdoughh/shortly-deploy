@@ -5,12 +5,8 @@ module.exports = function(grunt) {
     concat: {
       client: {
         src: ['public/client/*.js'],
-        dest: 'dist/client.js'
+        dest: 'public/dist/client.js'
       },
-      lib: {
-        src: ['public/lib/*.js'],
-        dest: 'dist/lib.js'
-      }
     },
 
     mochaTest: {
@@ -31,12 +27,8 @@ module.exports = function(grunt) {
     uglify: {
       client: {
         src: 'dist/client.js',
-        dest: 'dist/client.min.js'
+        dest: 'public/dist/client.min.js'
       },
-      lib: {
-        src: 'dist/lib.js',
-        dest: 'dist/lib.min.js'
-      }
     },
 
     jshint: {
@@ -54,6 +46,15 @@ module.exports = function(grunt) {
     },
 
     cssmin: {
+      target: {
+        files: [{
+          expand: true,
+          cwd: 'public',
+          src: ['style.css'],
+          dest: 'public/dist',
+          ext: '.min.css'
+        }]
+      }
     },
 
     watch: {
