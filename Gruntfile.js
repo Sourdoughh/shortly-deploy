@@ -33,7 +33,7 @@ module.exports = function(grunt) {
 
     jshint: {
       files: [
-        'public/**/**/*.js'
+        'public/**/*.js'
       ],
       options: {
         force: 'true',
@@ -110,12 +110,12 @@ module.exports = function(grunt) {
     'mochaTest'
   ]);
 
-
   grunt.registerTask('build', [
     'concat',
     'uglify',
     'cssmin'
   ]);
+
 
 
 
@@ -129,6 +129,9 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('deploy', [
+    'jshint',
+    'test',
+    'build'
     // add your deploy tasks here
   ]);
 
