@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     concat: {
-      client:
+      client: {
         src: ['public/client/*.js'],
         dest: 'dist/client.js'
       },
@@ -29,6 +29,14 @@ module.exports = function(grunt) {
     },
 
     uglify: {
+      client: {
+        src: 'dist/client.js',
+        dest: 'dist/client.min.js'
+      },
+      lib: {
+        src: 'dist/lib.js',
+        dest: 'dist/lib.min.js'
+      }
     },
 
     jshint: {
