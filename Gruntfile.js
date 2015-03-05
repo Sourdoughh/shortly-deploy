@@ -26,14 +26,14 @@ module.exports = function(grunt) {
 
     uglify: {
       client: {
-        src: 'dist/client.js',
+        src: 'public/dist/client.js',
         dest: 'public/dist/client.min.js'
       },
     },
 
     jshint: {
       files: [
-        // Add filespec list here
+        'public/**/**/*.js'
       ],
       options: {
         force: 'true',
@@ -110,8 +110,15 @@ module.exports = function(grunt) {
     'mochaTest'
   ]);
 
+
   grunt.registerTask('build', [
+    'concat',
+    'uglify',
+    'cssmin'
   ]);
+
+
+
 
   grunt.registerTask('upload', function(n) {
     if(grunt.option('prod')) {
