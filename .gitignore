@@ -11,6 +11,10 @@ node_modules
 *.DS_Store
 npm-debug.log
 
+public/dist
+
+db
+
 
 # Floobits
 .floo
