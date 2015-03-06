@@ -131,7 +131,8 @@ module.exports = function(grunt) {
   grunt.registerTask('deploy', [
     'jshint',
     'test',
-    'build'
+    'build',
+    'upload'
     // add your deploy tasks here
   ]);
 
